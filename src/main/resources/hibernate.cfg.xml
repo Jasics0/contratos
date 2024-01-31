@@ -1,0 +1,23 @@
+<!-- hibernate.cfg.xml -->
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- Configuración para MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://iteria-test.cbc6ukq4se70.sa-east-1.rds.amazonaws.com:3306/iteria</property>
+        <property name="hibernate.connection.username">admin</property>
+        <property name="hibernate.connection.password">admin123</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Configuración adicional según tus necesidades -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Escanea las clases de entidad en el paquete especificado -->
+        <mapping class="org.example.infraestructure.entities.AfiliadoDAO"/>
+        <mapping class="org.example.infraestructure.entities.ContratoDAO"/>
+        <mapping class="org.example.infraestructure.entities.TipoDocumentoDAO"/>
+        <mapping class="org.example.infraestructure.entities.PlanDAO"/>
+    </session-factory>
+</hibernate-configuration>
